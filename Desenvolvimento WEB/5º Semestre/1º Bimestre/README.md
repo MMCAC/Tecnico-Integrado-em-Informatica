@@ -1,1 +1,1 @@
-# Exercíio Aleatório
+# Exercício Aleatório
