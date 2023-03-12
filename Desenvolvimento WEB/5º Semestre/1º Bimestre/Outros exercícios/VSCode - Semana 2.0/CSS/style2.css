@@ -1,0 +1,17 @@
+#body{
+    background-color: #87CEEB;
+}
+h1{
+    text-align: center;
+    color: #363636;
+    font-family: fantasy;
+}
+p{
+    text-align: center;
+    color: #363636;
+    font-family: 'Courier New';
+}
+#Link{
+    background-color: #f44336;
+    color: white;
+}

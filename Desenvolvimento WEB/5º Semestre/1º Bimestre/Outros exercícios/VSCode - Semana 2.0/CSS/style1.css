@@ -1,0 +1,16 @@
+#body{
+    background-color: #ADD8E6;
+}
+h1{
+    text-align: center;
+    color: #363636;
+    font-family: fantasy;
+}
+p{
+    text-align: justify;
+    font-family: serif;
+}
+#Link{
+    background-color: #f44336;
+    color: white;
+}

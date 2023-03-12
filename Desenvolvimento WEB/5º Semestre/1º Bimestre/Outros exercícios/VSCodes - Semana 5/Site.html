@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site</title>
+    <link
+			href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap"
+			rel="stylesheet"
+	/>
+    <link rel="stylesheet" href="CSS/style.css" />
+</head>
+
+<body>
+    <header>
+        <a href="Site.html" class="link">
+        <div class="logo_container">
+            <image src="Imagens/drop.png" alt = "logo">
+            <h4 class="logo">DROP</h4>
+        </div>
+        </a>
+
+        <nav>
+            <ul class="nav_links">
+                <li><a class="nav_link" href="Site.html">HOME</a></li>
+                <li><a class="nav_link" href="Site2.html">IMAGENS</a></li>
+                <li><a class="nav_link" href="Site3.html">LOCAL</a></li>
+            </ul>
+        </nav>
+
+        <div class="cart">
+            <button type="button" class="like"  onclick="minhaFuncao()">GOSTEI</button>
+            <button type="button" class="dislike"  onclick="minhaFuncao()">NÃO GOSTEI</button>
+        </div>
+    </header>
+
+    <h1 id="button">"Nada por aqui"</h1>
+
+    <script>
+        function minhaFuncao(){
+            alert("Obrigado por visitar o site!");
+            document.getElementById("button").innerHTML = "?";
+        }
+    </script>
+
+</body>
+</html>
