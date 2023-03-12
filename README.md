@@ -5,3 +5,4 @@ Matérias constadas:
   2. Desenvolvimento WEB;
   3. Linguagem de Programação;
   4. Orientação a Objetos;
+  5. Banco de Dados.
