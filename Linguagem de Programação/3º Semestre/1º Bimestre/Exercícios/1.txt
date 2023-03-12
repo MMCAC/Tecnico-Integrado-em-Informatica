@@ -1,0 +1,115 @@
+package javaapplication3;
+
+import java.util.*;
+        
+public class NotasTeste 
+{
+    private String Nome;
+    private String Disciplina;
+    private double[] Notas = {-1,-1,-1,-1};
+    double Media;
+    
+    public String getNome()
+    {
+        return Nome;
+    }
+    public void setNome(String Nome)
+    {
+        this.Nome = Nome;
+    }
+    public String getDisciplina()
+    {
+        return Disciplina;
+    }
+    public void setDisciplina(String Nome)
+    {
+        this.Disciplina = Nome;
+    }
+    public void adicionaNota(double n1)
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            if(Notas[i] == -1)
+              {
+                  Notas[i] = n1;
+                  break;
+              }
+            else
+              {
+                  continue;
+              }
+        }
+    }
+    public double calculaMedia()
+    {
+        Media = (Notas[0]+Notas[1]+Notas[2]+Notas[3])/4;
+        return Media;
+    }
+    public boolean estaAprovado()
+    {
+        if(Media >= 7)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    public static void main(String[] args)
+    {
+        double n1, n2, n3, n4;
+        double media;
+        boolean estaAprovado;
+        
+        
+        
+        Scanner input = new Scanner(System.in);
+        NotasTeste maicon = new NotasTeste();
+        
+        
+        
+        System.out.print("Digite o seu nome: ");
+        maicon.setNome(input.nextLine());
+        
+        
+        
+        System.out.print("Digite a Disciplina: ");
+        maicon.setDisciplina(input.nextLine());
+        
+        
+        
+        System.out.printf("Informe a 1º nota: ");
+            n1 = input.nextDouble();
+            maicon.adicionaNota(n1);
+        System.out.printf("Informe a 2º nota: ");
+            n1 = input.nextDouble();
+            maicon.adicionaNota(n1);
+        System.out.printf("Informe a 3º nota: ");
+            n1 = input.nextDouble();
+            maicon.adicionaNota(n1);
+        System.out.printf("Informe a 4º nota: ");
+            n1 = input.nextDouble();
+            maicon.adicionaNota(n1);
+        
+            
+            
+        media = maicon.calculaMedia();
+        
+        System.out.printf("A média do aluno na disciplina é "+media+"\n");
+        
+        
+        
+        estaAprovado = maicon.estaAprovado();
+        
+        if(estaAprovado)
+        {
+            System.out.print("O aluno "+maicon.Nome+" está aprovado na Disciplina de "+maicon.Disciplina+"!");
+        }
+        else
+        {
+            System.out.print("O aluno "+maicon.Nome+" está reprovado na Disciplina de "+maicon.Disciplina+"!");
+        }
+    }
+}

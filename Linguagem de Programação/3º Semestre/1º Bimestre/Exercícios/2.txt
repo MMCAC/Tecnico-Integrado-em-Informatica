@@ -1,0 +1,50 @@
+package javaapplication3;
+
+import java.util.*;
+
+public class Circulo
+{
+    private double Raio;
+    
+        public double getRaio()
+        {
+            return Raio;
+        }
+        public double getArea()
+        {
+            return 3.14* (Raio * Raio);
+        }
+        public double getDiametro()
+        {
+            return Raio * 2;
+        }
+        public double getCircunferencia()
+        {
+            return Raio * 2 * 3.14;
+        }
+        public void Raio(double raio)
+        {
+            this.Raio = raio;
+        }
+    
+    
+    
+        public static void main(String[] args)
+        {  
+            Scanner input = new Scanner(System.in);
+            
+            
+            Circulo maicon = new Circulo();
+            
+            
+            System.out.print("Informe o tamanho do raio: ");
+            double raio = input.nextDouble();
+            
+            maicon.Raio(raio);
+            
+            System.out.print("Área do Círculo: "+maicon.getArea()+"\n");
+            System.out.print("Diâmetro do Círculo: "+maicon.getDiametro()+"\n");
+            System.out.print("Circunferência do Círculo: "+maicon.getCircunferencia()+"\n");
+            
+        }
+}

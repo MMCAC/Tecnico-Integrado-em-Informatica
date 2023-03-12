@@ -1,0 +1,204 @@
+package javaapplication3;
+
+/*
+* Calculadora de frequência cardíaca alvo
+* 
+* Ao realizar exercícios físicos, você pode utilizar um monitor de frequência cardíaca para ver se sua frequência permanece dentro de um intervalo seguro,
+* sugerido pelos seus treinadores e médicos. Segundo a American Heart Association (AHA), a fórmula para calcular a frequência cardíaca máxima por minuto é 220 menos a sua idade.
+* Sua frequência cardíaca alvo é um intervalo entre 50 - 85% da frequência cardíaca máxima. Crie uma classe chamada FrequenciasCardiacas.
+* Os atributos da classe devem incluir o nome, sobrenome e data de nascimento da pessoa (consistindo em atributos separados para o dia, mês e ano).
+* Sua classe deve ter um construtor que recebe estes atributos como parâmetros. Para cada atributo, forneça os métodos set e get.
+* A classe também deve incluir um método que calcular e retorna a idade da pessoa (em anos),
+* um método que calcula e retorna a frequência cardíaca máxima da pessoa e um método que calcula e retorna a frequência cardíaca alvo da pessoa.
+* Escreva um aplicativo Java que solicite as informações da pessoa, instancie um objeto da classe FrequenciasCardiacas e imprime as informações a partir deste objeto
+* - incluindo o nome, sobrenome e data de nascimento da pessoa - calcule e imprima a idade da pessoa, intervalo de frequência cardíaca alvo e frequência cardíaca máxima.
+*/
+
+import java.util.*;
+
+public class FrequenciasCardiacas 
+{
+    int Idade1;
+    int Ano, Mes, Dia, AnoAtual,DiaAtual, MesAtual;
+    int FCM1, FCA11, FCA12;
+    String Nome, Sobrenome;
+    
+    
+    public String getNome()
+    {
+        return Nome;
+    }
+    public void setNome(String Nome)
+    {
+        this.Nome = Nome;
+    }
+    public String getSobrenome()
+    {
+        return Sobrenome;
+    }
+    public void setSobrenome(String Sobrenome)
+    {
+        this.Sobrenome = Sobrenome;
+    }
+    
+    
+    
+
+    public int FCM1()
+    {
+        FCM1 = 220 - Idade1;
+        
+        return FCM1;
+    }
+    public int FCA11(int FMC1)
+    {
+        FCA11 = FCM1 * 50/100 ;
+        
+        return FCA11;
+    }
+    public int FCA12(int FCM1)
+    {
+        FCA12 = FCM1 * 80/100;
+        
+        return FCA12;
+    }
+    
+    
+    
+    
+    public int getCalculaIdade1()
+    {
+        return Idade1;
+    }
+    public void setCalculaIdade1(int AnoAtual, int Ano)
+    {
+        //this.Idade1 = AnoAtual - Ano;
+        
+        if(MesAtual < Mes)
+        {
+            this.Idade1 = AnoAtual - Ano - 1;
+        }
+        if(MesAtual > Mes)
+        {
+            this.Idade1 = AnoAtual - Ano;
+        }
+        if(MesAtual == Mes)
+        {
+            if(Dia > DiaAtual)
+            {
+                this.Idade1 = AnoAtual - Ano - 1;
+            }
+            if(Dia <= DiaAtual)
+            {
+                this.Idade1 = AnoAtual - Ano;
+            }
+        }
+    }
+    
+    
+    
+    
+    public int getMes()
+    {
+        return Mes;
+    }
+    public void setMes(int Mes)
+    {
+        this.Mes = Mes;
+    }
+    public int getAno()
+    {
+        return Ano;
+    }
+    public void setAno(int Ano)
+    {
+        this.Ano = Ano;
+    }   
+    public int getDia()
+    {
+        return Dia;
+    }
+    public void setDia(int Dia)
+    {
+        this.Dia = Dia;
+    }
+    
+    
+    
+    
+    
+    public int getAnoAtual()
+    {
+        return AnoAtual;
+    }
+    public void setAnoAtual(int AnoAtual)
+    {
+        this.AnoAtual = AnoAtual;
+    }
+    public int getDiaAtual()
+    {
+        return DiaAtual;
+    }
+    public void setDiaAtual(int DiaAtual)
+    {
+        this.DiaAtual = DiaAtual;
+    }
+     public int getMesAtual()
+    {
+        return MesAtual;
+    }
+    public void setMesAtual(int MesAtual)
+    {
+        this.MesAtual = MesAtual;
+    }
+    
+    
+    
+    
+    
+    
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        
+        FrequenciasCardiacas object = new FrequenciasCardiacas();
+        
+        System.out.printf("Informe o seu primeiro nome: ");
+        String Nome = input.nextLine();
+        object.setNome(Nome);
+        System.out.printf("Informe o seu sobrenome: ");
+        String Sobrenome = input.nextLine();
+        object.setSobrenome(Sobrenome);
+        
+        System.out.printf("\n-------------------------------------------------------------\n");
+        
+        System.out.printf("\nInforme o número de seu mês de nascimento(01-12): ");
+        object.setMes(input.nextInt());
+        System.out.printf("Informe o seu ano de nascimento: ");
+        object.setAno(input.nextInt());
+        System.out.printf("Informe o seu dia de nascimento: ");
+        object.setDia(input.nextInt());
+        
+        System.out.printf("\n-------------------------------------------------------------\n");
+        
+        System.out.printf("\nInforme o ano atual: ");
+        object.setAnoAtual(input.nextInt());
+        System.out.printf("Informe o dia atual: ");
+        object.setDiaAtual(input.nextInt());
+        System.out.printf("Informe o mês atual: ");
+        object.setMesAtual(input.nextInt());
+        
+        System.out.printf("\n-------------------------------------------------------------\n");
+        
+        object.setCalculaIdade1(object.getAnoAtual(), object.getAno());
+        
+        int FCA11 = object.FCA11(object.FCM1());
+        int FCA12 = object.FCA12(object.FCM1());
+        
+        System.out.printf("\nNome: "+object.getNome()+"\n");
+        System.out.printf("Sobrenome: "+object.getSobrenome()+"\n");
+        System.out.printf("Data de Nascimento: "+object.getDia()+"/"+object.getMes()+"/"+object.getAno()+".");
+        System.out.printf("\nSua idade é "+object.getCalculaIdade1()+".\nSua frequência cardíaca alvo é de "+FCA11+" a "+FCA12+".\nE sua frequência cardíaca máxima é "+object.FCM1()+".");
+
+    }
+}

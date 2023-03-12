@@ -1,0 +1,103 @@
+package javaapplication3;
+
+import java.util.*;
+
+public class ContaBancária
+{
+    private int numeroDaConta;
+    private int numeroDoCliente;
+    private double Saldo;
+    
+        public double getNumeroDaConta()
+        {
+            return numeroDaConta;
+        }
+        public void setNumeroDaConta(int NumeroDaConta)
+        {
+            this.numeroDaConta = NumeroDaConta;
+        }
+        public double getNumeroDoCliente()
+        {
+            return numeroDoCliente;
+        }
+        public void setNumeroDoCliente(int NumeroDoCliente)
+        {
+            this.numeroDoCliente = NumeroDoCliente;
+        }
+        public double getSaldo()
+        {
+            return this.Saldo;
+        }
+        public void setSaldo(double saldo)
+        {
+            this.Saldo = saldo;
+        }
+	public boolean Saca(double valor) 
+	{
+	    if (valor > this.Saldo) 
+		{
+                    return false;
+		}
+	    else
+		{
+                    this.Saldo = this.Saldo - valor;
+	   	    return true;
+		}
+	}
+	void Deposita(double quantidade) 
+	{
+		this.Saldo = this.Saldo + quantidade;
+	}
+    
+    
+    
+        public static void main(String[] args)
+        {  
+            Scanner input = new Scanner(System.in);
+            
+            boolean Saca;
+            
+            ContaBancária maicon = new ContaBancária();
+            
+            System.out.print("Informe o número do cliente: ");
+            int NumeroDoCliente = input.nextInt();
+            maicon.setNumeroDoCliente(NumeroDoCliente);
+            
+            System.out.print("Informe o número da conta: ");
+            int NumeroDaConta = input.nextInt();
+            maicon.setNumeroDaConta(NumeroDaConta);
+            
+            
+            System.out.print("Informe o saldo: ");
+            double saldo = input.nextDouble();
+            
+            maicon.setSaldo(saldo);
+
+	    System.out.print("Informe o saldo que quer sacar: ");
+	    double valor = input.nextDouble();
+	    maicon.Saca(valor);
+            
+            
+            
+            if(maicon.Saca(valor))
+            {
+                System.out.print("Saque aprovado!\nSaldo atual: "+maicon.getSaldo());
+            }
+            else
+            {
+                System.out.print("Saque reprovado!\nSaldo atual: "+maicon.getSaldo());
+            }
+            
+                
+
+	    System.out.print("\nInforme o valor que quer depositar: ");
+	    double quantidade = input.nextDouble();
+	    maicon.Deposita(quantidade);
+            
+            
+            System.out.print("Cliente atual: "+maicon.getNumeroDoCliente()+"\n");
+            System.out.print("Conta atual: "+maicon.getNumeroDaConta()+"\n");
+            System.out.print("Saldo atual: "+maicon.getSaldo()+"\n");
+	    
+        }
+}
