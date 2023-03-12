@@ -1,3 +1,3 @@
 # Exercícios realizados junto ao Prof. Fábio
 
-Softare usado: Code::Blocks
+Softare usado: Code::Blocks + Sublime
