@@ -1,3 +1,3 @@
-# Estudo em classes e objetos
+# Estudo de classes e objetos
 
 Linguagem: Java.
